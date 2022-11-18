@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Caso esteja marcado o botão Light, alteram-se as cores*/
+#light,
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+/*Caso esteja marcado o botão Dark, alteram-se as cores*/
+#dark,
+:root:has(#dark:checked) {
+  --bg-color: black;
+  --text-color: white;
+}
+
+/*Caso esteja marcado o botão Blue, alteram-se as cores*/
+#blue,
+:root:has(#blue:checked) {
+  --bg-color: rgb(173, 201, 235);
+  --text-color: rgb(87, 138, 255);
+}
+
+/*Caso esteja marcado o botão green, alteram-se as cores*/
+#green,
+:root:has(#green:checked) {
+  --bg-color: rgb(215, 255, 212);
+  --text-color: rgb(11, 206, 30);
+}
+
+body {
+  font-family: cursive;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: justify;
+}
+
+article {
+  width: 40rem;
+  margin: 2rem auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  /*Permite que os elementos fiquem um ao lado do outro */
+  display: flex;
+
+  /*Retira as bolinhas de cada RADIO*/
+  list-style: none;
+
+  /*Coloca espaço entre as opções */
+  gap: 1rem;
+
+  background-color: white;
+  box-shadow: 0 0 1rem rgb(0 0 0 / 0.2);
+
+  /*Deixa fixo na tela na parte inferior*/
+  position: fixed;
+  bottom: 1rem;
+
+  padding: 1rem;
+  border-radius: 8px;
+  /*Centraliza o elemento em tela*/
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/*Personaliza os Radios*/
+input[type="radio"] {
+  appearance: none;
+  border: 2px solid var(--input-color);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+/*Caso o radio esteja selecionado mudamos a cor de fundo*/
+input[type="radio"]:checked {
+  background-color: var(--input-color);
+}
+
+/*Cores para cada tema*/
+#dark {
+  --input-color: black;
+}
+
+#light {
+  --input-color: gray;
+}
+
+#blue {
+  --input-color: blue;
+}
+
+#green {
+  --input-color: green;
+}
